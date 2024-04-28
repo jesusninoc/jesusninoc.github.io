@@ -1,0 +1,281 @@
+html {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    /* user-select: none; */
+    -webkit-user-select: none;
+}
+
+.touch-device-only {
+    display: none;
+}
+
+#geolocation {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    color: white;
+    font-family: Arial;
+}
+
+#geolocation #go {
+    width: 40px;
+    height: 24px;
+    border: 0px;
+    padding: 0px;
+
+    margin-left: 4px;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    height: 26px;
+}
+
+#geolocation #location {
+    width: 190px;
+    height: 24px;
+    border: 0px;
+    padding: 0px 4px;
+
+    border: 1px solid #FFF;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#pixijs {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.virtual-key {
+    position: absolute;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#shade {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#teleport {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 8px;
+    top: 8px;
+    background-color: #FFF;
+}
+
+#menubar {
+    position: absolute;
+    right: 12px;
+    top: 13px;
+    z-index: 1000;
+    font-size: 80%;
+    font-family: Arial, sans-serif;
+}
+
+#dropdown>ul>li {
+    line-height: 26px;
+    padding-left: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #333;
+}
+
+.button {
+    cursor: pointer;
+    position: absolute;
+    width: 80px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    font-size: 80%;
+    font-family: sans-serif;
+
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #ddd;
+}
+
+#speed {
+    font-family: sans-serif;
+    /*font-weight: bold;*/
+    position: absolute;
+    color: #0F0;
+    bottom: 25px;
+    left: 40%;
+    text-align: center;
+    white-space: pre;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1000;
+}
+
+.vehicle-button {
+    cursor: pointer;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#title {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 20000;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#title img {
+    display: block;
+    position: absolute;
+    left: 20%;
+    top: 30%;
+}
+
+#title p {
+    text-align: center;
+    font-size: 48px;
+}
+
+#title #start-button {
+    position: absolute;
+    left: calc(50% - 75px);
+    top: 60%;
+    font-family: Arial;
+    width: 150px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    color: #FFF;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    #dropdown {
+        display: none;
+    }
+}
+
+/* preset location menu */
+
+#dropdown>ul>li {
+    width: 200px;
+}
+
+#dropdown li {
+    width: 210px;
+}
+
+/* main menu */
+
+#dropdown ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* sub menu depth 1 */
+
+#dropdown ul ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    /*   border: 1px solid;*/
+}
+
+/* sub menu depth 2+ */
+
+#dropdown ul ul ul {
+    top: 0;
+    left: 100%;
+}
+
+/* list */
+
+#dropdown li {
+    float: left;
+}
+
+#dropdown li li {
+    clear: both;
+}
+
+#dropdown li:hover {
+    position: relative;
+}
+
+#dropdown li:hover>ul {
+    display: block;
+}
+
+/* outfit */
+
+#dropdown li {
+    line-height: 1.5em;
+    /*   text-align: center;*/
+    /*   background: rgba(255, 255, 255, 0.95);*/
+    background: rgba(0, 0, 0, 0.75);
+    color: #FFF;
+}
+
+#dropdown li li {
+    text-align: left;
+}
+
+#dropdown li a {
+    display: block;
+    width: 200px;
+    text-decoration: none;
+    color: #FFF;
+    padding: 0 10px;
+}
+
+#dropdown li:hover {
+    background: #333;
+    color: #FFF;
+}
+
+#debugdraw {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 480px;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.5);
+}
