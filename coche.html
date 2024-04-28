@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -9,6 +10,10 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
+<script>
+  var lang = navigator.language || navigator.userLanguage;
+  var isJapanese = (lang.indexOf('ja') >= 0 || lang.indexOf('jp') >= 0);
+</script>
 
 <body>
   <div id="screen">
@@ -18,7 +23,8 @@
     -->
     <div id="title">
       <script>
-
+          document.write('<img src="title_en.png" width="60%">');
+      </script>
       <div id="start-button" onclick="javascript:start();">START</div>
     </div>
 
